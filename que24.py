@@ -1,13 +1,12 @@
-# 24.	Most Frequent Character 
-# •	Find the character with the highest frequency. 
+# 24.	Rotate a list:
+'''
+•	Left by one position 
+•	Right by one position
+'''
 
-s=input("enetr a string : ")
-max_char=""
-max_freq=0
-for ch in s:
-    count=s.count(ch)
-    if count>max_freq:
-        max_freq=count
-        max_char=ch
-print("most frequent character : ",max_char)
-print("frequency : ",max_freq)        
+list=list(map(int,input("Enter a list :").split()))
+left=list[1:]+list[:1]
+right=list[-1:]+list[:-1]
+print("original list :",list)
+print("Left by one position :",left)
+print("Right by one position :",right)

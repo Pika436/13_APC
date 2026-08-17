@@ -1,10 +1,15 @@
-#13.	Shortest Word 
-# a.	Find the shortest word in a sentence. 
-s=input("enter a string : ")
-word=s.split()
-small=word[0]
-for words in word:
-    if len(small)>len(words):
-        small=words
-        
-print("smallest word : ",small)        
+# 13.	Accept 10 numbers and sort them in:
+'''•	Ascending order 
+•	Descending order
+'''
+
+numbers=[]
+for i in range(10):
+    num=int(input("enter a number :"))
+    numbers.append(num)
+
+numbers.sort()
+print("ascending order :",numbers)
+
+numbers.reverse()
+print("descending order :",numbers)    

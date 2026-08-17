@@ -1,9 +1,3 @@
-#12.Longest Word 
-# Find the longest word in a given sentence. 
-s=input("enter a string : ")
-word=s.split()
-large=word[0]
-for words in word:
-    if len(large)<len(words):
-        large=words
-print("largest element : ",large)        
+#  12.	Display all elements present at even index positions.
+li=[28,48,50,60,63,88,29]
+print("element at even index: ",li[::2])

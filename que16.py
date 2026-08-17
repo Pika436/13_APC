@@ -1,8 +1,19 @@
-#16.	Character Frequency 
-# a.	Display the frequency of every character in a string. 
-s=input("enetr a string : ")
-done=""
-for ch in s:
-    if ch not in done:
-        print(ch,":",s.count(ch))
-        done+=ch
+# 16.	Create a nested list storing:
+
+'''•	Student Name 
+•	Roll Number 
+•	Marks 
+Display all student details.
+'''
+'''
+n=int(input("enter numbers of rows :"))
+for i in range(1,n+1):
+    print(" " * (n-i) , "* " * i)
+ '''       
+  
+students=[
+    ["ram",101,85],
+    ["shyam",102,90],
+    ["sita",103,80]
+]   
+print(students)     
