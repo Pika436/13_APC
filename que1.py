@@ -1,3 +1,4 @@
-# 1.Write a Python program to create a tuple of five integers and display it.
-tup=(10,20,30,40,50)
-print(tup)
+# 1.	Write a Python program to create a set containing five integers and display all its elements.
+myset={23,65,11,53,84}
+print("set :",myset)
+

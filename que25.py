@@ -1,18 +1,20 @@
-# 25.	Store runs scored in 10 matches and calculate:
+# 25.	Represent the friends of two users using sets. Find:
 '''
-•	Total runs 
-•	Highest score 
-•	Lowest score 
-•	Average score 
+•	Mutual friends 
+•	Friends unique to User 1 
+•	Friends unique to User 2 
+•	Total unique friends
 '''
-score=(60,80,97,200,100,86,56,73,66,90)
 
-total=sum(score)
-high=max(score)
-low=min(score)
-avg=total/len(score)
+user1={"prachi","shravani","aditi","sanchita"}
+user2={"prachi","siddhi","kalyani","sneha"}
 
-print("Total runs :",total)
-print("Highest score :",high)
-print("Lowest score :",low)
-print("Average score :",avg)
+mut=user1.intersection(user2)
+u1=user1.difference(user2)
+u2=user2.difference(user1)
+total=user1.union(user2)
+
+print("Mutual friends :",mut)
+print("Friends unique to User 1 :",u1)
+print("Friends unique to User 1 :",u2)
+print("Total unique friends :",total)

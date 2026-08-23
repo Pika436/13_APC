@@ -1,18 +1,6 @@
-# 23.	Store item prices in a tuple and calculate:
-'''
-•	Total bill 
-•	Average price 
-•	Highest-priced item 
-•	Lowest-priced item
-'''
-prices=(500,6000,5400,800,960,1000)
+# 23.	Create a set containing available books and another set containing requested books. Determine which requested books are available.
+available={"math","english","python","java","c++"}
+request={"science","marathi","hindi","python",""}
 
-total=sum(prices)
-avg=total/len(prices)
-high=max(prices)
-low=min(prices)
-
-print("total bill :",total)
-print("Average price :",avg)
-print("Highest-priced item :",high)
-print("Lowest-priced item :",low)
+avail=available.intersection(request)
+print(" requested books are available :",avail)

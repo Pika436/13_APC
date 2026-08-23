@@ -1,11 +1,7 @@
-# 15.	Create a nested tuple containing student details and display each record.
-students=(
-    ("ram",101,85),
-    ("shyam",102,90),
-    ("seeta",103,95)
-)
-for student in students:
-    print("name :",student[0])
-    print("roll no :",student[1])
-    print("marks :",student[2])
-    print()
+# 15.	Write a program to determine whether two sets have no elements in common.
+s1={12,23,34,56}
+s2={76,54,43,32}
+if s1.isdisjoint(s2):
+    print("sets have no element in comman")
+else:
+    print("sets have common elements")    

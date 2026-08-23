@@ -1,9 +1,7 @@
-# 13.	Modify a tuple by converting it into a list and then back into a tuple
-mytuple=(1,2,3,4,5,5)
-print("original tuple :",mytuple)
-mylist=list(mytuple)
-mylist.append(80)
-print("list :",mylist)
-
-mytuple=tuple(mylist)
-print("modified tuple :",mytuple)
+# 13.Create two sets and determine whether the first set is a subset of the second set.
+set1={12,32,11,45}
+set2={23,45,56,12}
+if set1.issubset(set2):
+    print("subset")
+else:
+    print("not subset")    

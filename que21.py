@@ -1,11 +1,10 @@
-# 21.	Store student details in a tuple:
-'''
-•	Roll Number 
-•	Name 
-•	Department 
-•	Marks 
-Display all the details.
-'''
+# 21.	Find students enrolled in both courses and students enrolled in only one course.
 
-stu=(101,"shyam","cse",85)
-print("student details :",stu)
+python={"ram","joya","hari","priya","prem"}
+java={"manju","satya","prem","rockey","priya"}
+
+both=python.union(java)
+one=python.symmetric_difference(java)
+print("student rnrolled in both cources :",both)
+print("student enrolled in only one course :",one)
+

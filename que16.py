@@ -1,6 +1,7 @@
-# 16.	Store ten numbers in a tuple and calculate their sum.
-mytuple=(2,3,5,8,9,12,34,56,21,22)
-sum=0
-for i in mytuple:
-    sum=sum+i
-print("sum :",sum)    
+# 16.	Create two sets and check whether they are equal.
+set1={1,2,3}
+set2={2,4,5,7}
+if set1==set2:
+    print("equal")
+else:
+    print("not equal")    

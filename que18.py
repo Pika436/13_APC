@@ -1,8 +1,5 @@
-# 18.	Calculate the average of elements stored in a tuple.
-mytup=(2,4,5,7,9,11,21,42)
-sum=0
-for i in mytup:
-    sum=sum+i
-print("sum :",sum)  
-avg=sum/len(mytup)
-print("average :",avg)  
+# 18.	Accept a sentence from the user and use a set to display all unique words.
+sentence=input("enetr a sentence :")
+sent=set(sentence.split())
+for word in sent:
+    print(word)

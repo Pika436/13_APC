@@ -1,12 +1,5 @@
-# 17.	Find the largest and smallest number in a tuple without using max() and min().
-mytuple=(12,34,78,54,19,86)
-max=mytuple[0]
-min=mytuple[0]
-for i in mytuple:
-    if max < i:
-        max=i
-    elif min > i:
-        min=i
-        
-print("max :",max)
-print("min :",min)            
+# 17.	Two students have selected different subjects. Store their subjects in two sets and determine the subjects studied by both students.
+stu1={"marathi","english","hindi","python"}
+stu2={"c","c++","python","java","english"}
+common=stu1.intersection(stu2)
+print("common subjects :",common)

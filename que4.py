@@ -1,8 +1,4 @@
-# 4.	Create a tuple of colors. Check whether a given color exists in the tuple
-colors=("red","black","pink","yellow","orange")
-color=input("enter a color :")
-if color in colors:
-    print("color exist")
-else:
-    print("color not exist")    
-    
+# 4.Create a set of numbers and remove a specified number from the set.
+numbers={23,45,56,67,223,12}
+numbers.pop()
+print(numbers)
