@@ -1,5 +1,3 @@
-# 3.Create a list of colors. Replace the third color with another color and display the updated list.
-
-col=["red","green","blue","yellow","brown"]
-col[2]="black"
-print(col)
+# 3.Create a tuple of student names and display the total number of students using the len() function.
+students=("prachi","shravani","aditi","sanchita","chhakuli")
+print("total number of students :",len(students))

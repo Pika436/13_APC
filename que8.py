@@ -1,18 +1,5 @@
-#8.	Store 15 integers in a list. Count how many numbers are:
-'''•	Even 
-•	Odd
-'''
-
-numbers=[]
-for i in range(15):
-    num=int(input("Enter a numers: "))
-    numbers.append(num)
-
-even=0
-odd=0
-for num in numbers:
-    if num%2==0:
-        even+=1
-    else:
-        odd+=1
-print("EVEN : ",even," ODD : ",odd)                
+# 8.Create two tuples of numbers and concatenate them into a single tuple.
+tup1=(1,3,5,7,8)
+tup2=(8,3,9,2)
+tup3=tup1+tup2
+print(tup3)

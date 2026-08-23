@@ -1,15 +1,9 @@
-# 13.	Accept 10 numbers and sort them in:
-'''•	Ascending order 
-•	Descending order
-'''
+# 13.	Modify a tuple by converting it into a list and then back into a tuple
+mytuple=(1,2,3,4,5,5)
+print("original tuple :",mytuple)
+mylist=list(mytuple)
+mylist.append(80)
+print("list :",mylist)
 
-numbers=[]
-for i in range(10):
-    num=int(input("enter a number :"))
-    numbers.append(num)
-
-numbers.sort()
-print("ascending order :",numbers)
-
-numbers.reverse()
-print("descending order :",numbers)    
+mytuple=tuple(mylist)
+print("modified tuple :",mytuple)

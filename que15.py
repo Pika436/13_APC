@@ -1,4 +1,11 @@
-# 15.	Find the second largest element in a list.
-list=[20,34,60,85,35,22,90]
-list.sort()
-print("second largest element :",list[-2])
+# 15.	Create a nested tuple containing student details and display each record.
+students=(
+    ("ram",101,85),
+    ("shyam",102,90),
+    ("seeta",103,95)
+)
+for student in students:
+    print("name :",student[0])
+    print("roll no :",student[1])
+    print("marks :",student[2])
+    print()

@@ -1,11 +1,8 @@
-# 29.	Sentence Reversal 
-'''•	Reverse the order of words in a sentence without changing the words themselves. 
-•	Example:
-•	Input: Python is easy
-Output: easy is Python
-'''
+# 29.	Convert a tuple into a sorted tuple in ascending and descending order.
+tup=(56,86,23,90,12,75)
 
-s=input("entre a string : ")
-word=s.split()
-word.reverse()
-print(" ".join(word))
+ascending=tuple(sorted(tup))
+descending=tuple(sorted(tup,reverse=True))
+
+print("ascending order :",ascending)
+print("descending order :",descending)

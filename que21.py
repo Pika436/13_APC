@@ -1,5 +1,11 @@
-# 21.	Accept two lists and merge them into a single list.
-l1=list(map(int,input("enter first list :").split()))
-l2=list(map(int,input("enter second list :").split()))
-result=l1+l2
-print("merged list :",result)
+# 21.	Store student details in a tuple:
+'''
+•	Roll Number 
+•	Name 
+•	Department 
+•	Marks 
+Display all the details.
+'''
+
+stu=(101,"shyam","cse",85)
+print("student details :",stu)

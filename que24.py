@@ -1,12 +1,17 @@
-# 24.	Rotate a list:
+# 24.	Store temperatures of seven days in a tuple and determine:
 '''
-•	Left by one position 
-•	Right by one position
-'''
+•	Maximum temperature 
+•	Minimum temperature 
+•	Average temperature 
 
-list=list(map(int,input("Enter a list :").split()))
-left=list[1:]+list[:1]
-right=list[-1:]+list[:-1]
-print("original list :",list)
-print("Left by one position :",left)
-print("Right by one position :",right)
+'''
+temp=(11,12,30,28,26,24,22)
+
+max=max(temp)
+mini=min(temp)
+total=sum(temp)
+avg=total/len(temp)
+
+print("Maximum temperature :",max)
+print("Minimum temperature :",mini)
+print("Average temperature :",avg)

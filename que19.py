@@ -1,45 +1,16 @@
-# 19.	Store names of students present in class.
-'''Display:
-•	Total students 
-•	Search a student's attendance 
-•	Add a new student 
-•	Remove an absent student 
+# 19.	Store 15 integers in a tuple and count:
+'''•	Even numbers 
+•	Odd numbers
 '''
 
-student=['prachi','rahul','sneha','ram','gita','sita']
-while True:
-    print("\n-----Student attendance-----")
-    print("1.Total student")
-    print("2.Search a student's attendance ")
-    print("3.Add a new student")
-    print("4.Remove an absent student ")
-    print("5.Display student")
-    print("6.Exit")
-    
-    choice=int(input("enetr choice(1-6): "))
-    if choice==1:
-        print("total student :",len(student))
-    elif choice==2:
-        name=input("enter name to search :")
-        if name in student:
-            print(name,"is present")
-        else:
-            print(name,"is not present")
-    elif choice==3:
-        name=input("enter name to add :")
-        student.append(name)
-        print(name,"added successfully")
-    elif choice==4:
-        name=input("enter name to delete :")
-        if name in student:
-          student.remove(name)
-          print(name,"removed successfully")
-        else:
-            print("student not found")  
-    elif choice==5:
-        print("presend student :",student)
-    elif choice==6:
-        print("program ended")
-        break 
+mytuple=(2,4,5,6,7,8,9,11,33,43,45,66,21,54,55)
+even=0
+odd=0
+for i in range(len(mytuple)):
+    if i%2==0:
+        even+=1
     else:
-        print("invalid choice")                                
+        odd+=1
+
+print("even numbers :",even)
+print("odd numbers :",odd)            

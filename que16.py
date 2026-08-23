@@ -1,19 +1,6 @@
-# 16.	Create a nested list storing:
-
-'''•	Student Name 
-•	Roll Number 
-•	Marks 
-Display all student details.
-'''
-'''
-n=int(input("enter numbers of rows :"))
-for i in range(1,n+1):
-    print(" " * (n-i) , "* " * i)
- '''       
-  
-students=[
-    ["ram",101,85],
-    ["shyam",102,90],
-    ["sita",103,80]
-]   
-print(students)     
+# 16.	Store ten numbers in a tuple and calculate their sum.
+mytuple=(2,3,5,8,9,12,34,56,21,22)
+sum=0
+for i in mytuple:
+    sum=sum+i
+print("sum :",sum)    

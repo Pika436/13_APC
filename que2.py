@@ -1,10 +1,12 @@
-# 2.	Create a list of five integers. Display:
-'''•	First element 
-   •	Last element 
-   •	Third element
+# 2.	Create a tuple containing five city names. Display:
+'''
+•	First city 
+•	Last city 
+•	Third city
 '''
 
-list=[10,20,30,40,50]
-print("First element : ",list[0])
-print("last element : ",list[-1])
-print("Third element : ",list[2])
+
+tup=("pune","mumbai","satara","kolhapur","sangali")
+print("first city :",tup[1])
+print("last city :",tup[-1])
+print("third city :",tup[2])

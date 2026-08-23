@@ -1,10 +1,16 @@
-# 22.	Find common elements between two lists.
-l1=list(map(int,input("enetr first list :").split()))
-l2=list(map(int,input("enter second list :").split()))
-new=[]
-for i in l1:
-    if i in l2:
-        new.append(i)  
-print(new)          
-        
-    
+# 22.	Create tuples containing:
+'''
+•	Employee ID 
+•	Name 
+•	Salary 
+Display all employee information.
+'''
+
+emp1=(101,"ram",500000)
+emp2=(102,"rahul",90000)
+emp3=(103,"priya",800000)
+
+print("employee 1 :",emp1)
+print("employee 2 :",emp2)
+print("employee 3 :",emp3)
+

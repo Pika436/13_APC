@@ -1,3 +1,8 @@
-#  12.	Display all elements present at even index positions.
-li=[28,48,50,60,63,88,29]
-print("element at even index: ",li[::2])
+# 12.	Accept five numbers from the user, store them in a list, and convert the list into a tuple.
+mylist=[]
+for i in range(5):
+    num=int(input("enter a number :"))
+    mylist.append(num)
+print("list :",mylist)
+mytuple=tuple(mylist)
+print("tuple :",mytuple)    

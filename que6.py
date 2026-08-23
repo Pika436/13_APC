@@ -1,10 +1,5 @@
-# 6.Write a program to find the largest and smallest number in a list without using max() or min().
-li=[10,60,75,30,20]
-small=li[0]
-large=li[0]
-for i in li:
-    if(small > i):
-        small=i
-    elif (large<i):
-        large=i   
-print("small : ",small,"large : ",large)        
+# 6.	Create a tuple with repeated numbers and count how many times a particular number appears.
+num=(1,2,3,4,5,6,1,6,4,8,3,2,9,4,6,4,2)
+for n in set(num):
+    print(n,":",num.count(n))
+    

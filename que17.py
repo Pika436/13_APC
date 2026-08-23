@@ -1,24 +1,12 @@
-# 17.	Create two 3 × 3 matrices using nested lists and perform matrix addition.
-
-m1=[
-    [2,3,4],
-    [4,6,8],
-    [7,8,3]
-]
-m2=[
-    [4,2,7],
-    [3,5,7],
-    [1,4,8]
-]
-
-    
-print("Addition is :")
-result=[]
-for i in range(3):
-    row=[]
-    for j  in range(3):
-        row.append(m1[i][j]+m2[i][j])
-    result.append(row)
-    
-for row in result:
-    print(row)               
+# 17.	Find the largest and smallest number in a tuple without using max() and min().
+mytuple=(12,34,78,54,19,86)
+max=mytuple[0]
+min=mytuple[0]
+for i in mytuple:
+    if max < i:
+        max=i
+    elif min > i:
+        min=i
+        
+print("max :",max)
+print("min :",min)            

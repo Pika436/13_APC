@@ -1,7 +1,4 @@
-# 9.Create a list of cities. Ask the user to enter a city name and check whether it exists in the list.
-cities=["pune","mumbai","satara","kolhapur","nashik"]
-city=input("Enter a city : ")
-if city in cities:
-    print("exist")
-else:
-    print("not exist")    
+# 9.Create a tuple containing three elements and repeat it four times.
+tup=(34,56,7)
+for i in range(4):
+    print(tup)

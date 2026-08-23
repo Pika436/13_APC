@@ -1,3 +1,3 @@
-# 1.	Write a Python program to create a list of five fruits and display the list.
-list=["apple","banana","mango","orange","kiwi"]
-print(list)
+# 1.Write a Python program to create a tuple of five integers and display it.
+tup=(10,20,30,40,50)
+print(tup)
