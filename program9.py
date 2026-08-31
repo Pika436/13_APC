@@ -1,9 +1,18 @@
-languages = {
-    "Python": "Guido van Rossum",
-    "Java": "James Gosling",
-    "C": "Dennis Ritchie",
-    "C++": "Bjarne Stroustrup"
-}
+# 9. Read a text file and count the number of vowels and consonants present in the file.
 
-for key, value in languages.items():
-    print(key, ":", value)
+
+with open("student.txt", "r") as file:
+    content = file.read()
+
+vowels = 0
+consonants = 0
+
+for ch in content:
+    if ch.isalpha():
+        if ch.lower() in "aeiou":
+            vowels += 1
+        else:
+            consonants += 1
+
+print("Total vowels:", vowels)
+print("Total consonants:", consonants)

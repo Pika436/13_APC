@@ -1,11 +1,15 @@
-students = {
-    "Amit": 75,
-    "Rahul": 90,
-    "Sneha": 85,
-    "Priya": 95
-}
+# 13. Accept a word from the user and search for it in a text file. Display the number of occurrences and the line numbers where it appears. 
+word = input("Enter word: ")
 
-total = sum(students.values())
-average = total / len(students)
+count = 0
+line_no = 0
 
-print("Average marks:", average)
+with open("student.txt", "r") as file:
+    for line in file:
+        line_no += 1
+        
+        if word in line:
+            count += line.count(word)
+            print("Found in line:", line_no)
+
+print("Total occurrences:", count)

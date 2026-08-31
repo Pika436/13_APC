@@ -1,14 +1,5 @@
-students = {
-    "Amit": 70,
-    "Rahul": 80,
-    "Sneha": 90
-}
+# 4. Write a program to read a text file line by line and display each line separately. 
 
-name = input("Enter student name: ")
-marks = int(input("Enter new marks: "))
-
-if name in students:
-    students[name] = marks
-    print(students)
-else:
-    print("Student not found")
+with open("student.txt", "r") as file:
+    for line in file:
+        print(line, end="")

@@ -1,14 +1,6 @@
-cities = {
-    "Mumbai": 20000000,
-    "Pune": 7000000,
-    "Delhi": 30000000,
-    "Nashik": 2000000
-}
+# 5. Write a program to count and display the total number of lines present in a text file. 
 
-city = input("Enter city to remove: ")
+with open("student.txt", "r") as file:
+    lines = file.readlines()
 
-if city in cities:
-    del cities[city]
-    print(cities)
-else:
-    print("City not found")
+print("Total number of lines:", len(lines))

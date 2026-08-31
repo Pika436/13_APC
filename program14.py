@@ -1,8 +1,13 @@
-text = input("Enter a string: ")
+# 14. Read a text file and replace all occurrences of a specified word with another word. Save the modified text in the same file or a new file. 
+old_word = input("Enter word to replace: ")
+new_word = input("Enter new word: ")
 
-frequency = {}
+with open("student.txt", "r") as file:
+    content = file.read()
 
-for ch in text:
-    frequency[ch] = frequency.get(ch, 0) + 1
+content = content.replace(old_word, new_word)
 
-print(frequency)
+with open("student.txt", "w") as file:
+    file.write(content)
+
+print("Word replaced successfully.")

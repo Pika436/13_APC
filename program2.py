@@ -1,13 +1,4 @@
-employee = {
-    "id": 101,
-    "name": "Rahul",
-    "department": "IT",
-    "salary": 50000
-}
-
-key = input("Enter key: ")
-
-if key in employee:
-    print("Value:", employee[key])
-else:
-    print("Key not found")
+#2. Write a program to open a text file and display its complete contents. 
+with open("student.txt",'r') as f:
+    content=f.read()
+    print(content)

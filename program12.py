@@ -1,10 +1,18 @@
-students = {
-    "Amit": 75,
-    "Rahul": 90,
-    "Sneha": 65,
-    "Priya": 95
-}
+# 12. Read a text file and count how many times each word occurs. Display the result using a dictionary.
 
-name = min(students, key=students.get)
+with open("student.txt", "r") as file:
+    content = file.read()
 
-print("Lowest marks:", name, students[name])
+words = content.split()
+
+word_count = {}
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+print("Word frequency:")
+print(word_count)
+    

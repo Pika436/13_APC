@@ -1,13 +1,8 @@
-employees = {
-    101: "Amit",
-    102: "Rahul",
-    103: "Sneha",
-    104: "Priya"
-}
+# 6. Write a program to count the total number of words present in a text file. 
 
-id = int(input("Enter employee ID: "))
+with open("student.txt", "r") as file:
+    content = file.read()
 
-if id in employees:
-    print("Employee exists")
-else:
-    print("Employee does not exist")
+words = content.split()
+
+print("Total number of words:", len(words))

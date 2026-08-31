@@ -1,9 +1,11 @@
-sentence = input("Enter a sentence: ")
+# 15. Read a Python source file and create another file after removing single-line comments. 
+with open("program.py", "r") as file:
+    lines = file.readlines()
 
-words = sentence.split()
-frequency = {}
+with open("new_program.py", "w") as file:
+    for line in lines:
+        if "#" in line:
+            line = line.split("#")[0]
+        file.write(line)
 
-for word in words:
-    frequency[word] = frequency.get(word, 0) + 1
-
-print(frequency)
+print("Comments removed successfully.")

@@ -1,11 +1,9 @@
-products = {
-    "Pen": 10,
-    "Book": 50,
-    "Bag": 500,
-    "Pencil": 5,
-    "Bottle": 100
-}
+# 3. Write a program to append additional student information to an existing file without deleting its previous contents. 
 
-products["Notebook"] = 80
-
-print(products)
+with open("student.txt",'a') as f:
+    f.write("\nstudent name :ram\n")
+    f.write("Roll Number :23\n")
+    f.write("Branch :cse\n")
+    f.write("semester :6\n")
+print("additional student information added")    
+    

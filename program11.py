@@ -1,10 +1,10 @@
-students = {
-    "Amit": 75,
-    "Rahul": 90,
-    "Sneha": 85,
-    "Priya": 95
-}
+# 11. Read a text file and find the longest word present in the file. 
 
-name = max(students, key=students.get)
+with open("student.txt", "r") as file:
+    content = file.read()
 
-print("Highest marks:", name, students[name])
+words = content.split()
+
+longest_word = max(words, key=len)
+
+print("Longest word:", longest_word)

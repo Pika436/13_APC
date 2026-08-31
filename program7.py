@@ -1,8 +1,8 @@
-students = {
-    "Amit": 80,
-    "Rahul": 75,
-    "Sneha": 90,
-    "Priya": 85
-}
+# 7. Write a program to count the total number of characters in a text file, including spaces. 
 
-print("Total key-value pairs:", len(students))
+with open("student.txt", "r") as file:
+    content = file.read()
+
+characters = len(content)
+
+print("Total number of characters:", characters)

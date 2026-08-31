@@ -1,15 +1,21 @@
-data = {
-    "a": 10,
-    "b": 20,
-    "c": 10,
-    "d": 30,
-    "e": 20
-}
+# 19. Store student attendance records in a file. Calculate the attendance percentage and display students having attendance below 75%. 
+def attendance():
+    with open("attendance.txt", "r") as file:
 
-new_dict = {}
+        for line in file:
+            data = line.strip().split(",")
 
-for key, value in data.items():
-    if value not in new_dict.values():
-        new_dict[key] = value
+            roll_no = data[0]
+            name = data[1]
+            present = int(data[2])
+            total = int(data[3])
 
-print(new_dict)
+            percentage = (present / total) * 100
+
+            print(name, "Attendance:", percentage, "%")
+
+            if percentage < 75:
+                print("Below 75%:", name)
+
+
+attendance()
