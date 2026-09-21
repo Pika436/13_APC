@@ -1,9 +1,18 @@
-#4.	Create a function simple_interest(p, r, t) to calculate simple interest.
-def simple_interest(p,r,t):
-    si = (p*r*t) / 100
-    return si
-p = float(input("enter principle amount:"))
-r = float(input("enter rate of interest:"))
-t = float(input("enter time in years:"))
-result = simple_interest(p,r,t)
-print("simple Interest :",result)
+# 4.	Create a class Circle with an attribute radius. Define methods to calculate the area and circumference of the circle.
+
+class Circle:
+    def __init__(self,radius):
+        self.radius=radius
+        
+    def area(self):
+        return 3.14* self.radius * self.radius  
+    
+    def circumferance(self):
+        return 2 * 3.14 * self.radius
+    
+    def display(self):
+        print("area of circle : ",self.area())  
+        print("circumference of circle :",self.circumferance())
+        
+obj=Circle(4)
+obj.display()        
