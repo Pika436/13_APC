@@ -1,71 +1,21 @@
-#9.	Design an ATM class that allows a user to:
+# 9.	Create a 4 × 4 NumPy array and write a program to:
 '''
-a)	Check balance 
-b)	Deposit money 
-c)	Withdraw money 
-d)	Display account details
-Create an object of the class and implement the operations through a menu-driven program.
+•	Display the first row 
+•	Display the last column 
+•	Display the diagonal elements 
+•	Display the elements from the second and third rows
 '''
+import numpy as np
+arr=np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
 
-class ATM:
-    def __init__(self, account_no, name, balance):
-        self.account_no = account_no
-        self.name = name
-        self.balance = balance
+print("first row :")
+print(arr[0: ])
 
-    def check_balance(self):
-        print("Current Balance: Rs.", self.balance)
+print("last column :")
+print(arr[ :-1])
 
-    def deposit(self, amount):
-        self.balance = self.balance + amount
-        print("Amount deposited successfully.")
-        print("Updated Balance: Rs.", self.balance)
+print("diagonal element :")
+print(np.diag(arr))
 
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance = self.balance - amount
-            print("Please collect your cash.")
-            print("Remaining Balance: Rs.", self.balance)
-        else:
-            print("Insufficient balance.")
-
-    def display_account(self):
-        print("Account Number:", self.account_no)
-        print("Account Holder:", self.name)
-        print("Balance: Rs.", self.balance)
-
-
-# Creating object
-obj = ATM(12345, "Prachi", 10000)
-
-while True:
-    print("\n----- ATM MENU -----")
-    print("1. Check Balance")
-    print("2. Deposit Money")
-    print("3. Withdraw Money")
-    print("4. Display Account Details")
-    print("5. Exit")
-
-    choice = int(input("Enter your choice: "))
-
-    if choice == 1:
-        obj.check_balance()
-
-    elif choice == 2:
-        amount = float(input("Enter amount to deposit: "))
-        obj.deposit(amount)
-
-    elif choice == 3:
-        amount = float(input("Enter amount to withdraw: "))
-        obj.withdraw(amount)
-
-    elif choice == 4:
-        obj.display_account()
-
-    elif choice == 5:
-        print("Thank you for using ATM.")
-        break
-
-    else:
-        print("Invalid choice.")
-        
+print("second and third row element :")
+print(arr[1:3,:])

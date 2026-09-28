@@ -1,14 +1,15 @@
-#13.	Write a function that accepts a list of numbers and returns their average.
-def calculate_average(numbers):
-    total = 0
+# 13.	Create an unsorted NumPy array and display it in:
+'''
+•	Ascending order 
+•	Descending order
+'''
 
-    for num in numbers:
-        total += num
+import numpy as np
+arr=np.array([89,65,23,11,45,27])
 
-    average = total / len(numbers)
-    return average
+asc=np.sort(arr)
+desc=np.sort(arr)[::-1]
 
-
-numbers = [10, 20, 30, 40, 50]
-
-print("Average =", calculate_average(numbers))
+print("original array :",arr)
+print("ascending order :",asc)
+print("descending order :",desc)

@@ -1,23 +1,18 @@
-# 7.	Create a class MobilePhone with attributes brand, model, storage, and price. Define methods to display specifications and calculate the price after discount.
+# 7.Create two compatible matrices using NumPy and perform matrix multiplication using an appropriate NumPy function.
 
-class MobilePhone:
-    def __init__(self,brand,model,storage,price):
-        self.brand=brand
-        self.model=model
-        self.storage=storage
-        self.price=price
-        
-    def display(self):
-        print("brand :",self.brand)
-        print("model :",self.model)
-        print("storage :",self.storage)
-        print("price :",self.price)
-        
-    def discount(self):
-        discount=self.price*0.10
-        final_price=self.price-discount
-        return final_price
-    
-obj=MobilePhone("vivo","Y28s 5G",128,14000)
-obj.display()
-print("price after 10% discount :",obj.discount())            
+import numpy as np
+A=np.array([[1,2,3],
+           [4,5,6],
+           [7,8,9]])
+B=np.array([[10,11],
+           [12,13],
+           [14,15]])
+
+C=np.matmul(A,B)
+
+print("matrix A :")
+print(A)
+print("matrix B :")
+print(B)
+print("multiplication :")
+print(C) 

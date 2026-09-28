@@ -1,16 +1,7 @@
-#12.	Create a function that checks whether a given string or number is a palindrome
-def is_palindrome(value):
-    value = str(value)
-    
-    if value == value[::-1]:
-        return True
-    else:
-        return False
+# 12.	Create an array of 10 integers. Replace all elements greater than 50 with 0 using NumPy Boolean indexing
+import numpy as np
+arr=np.array([10,20,30,40,50,60,70,80,90,100])
+print("original array :",arr)
 
-
-value = input("Enter a string or number: ")
-
-if is_palindrome(value):
-    print("Palindrome")
-else:
-    print("Not a Palindrome")
+arr[arr>50]=0
+print("modified array :",arr)

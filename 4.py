@@ -1,18 +1,11 @@
-# 4.	Create a class Circle with an attribute radius. Define methods to calculate the area and circumference of the circle.
+# 4.	Create a NumPy array of integers from 1 to 20. Use Boolean indexing to separate and display the even and odd numbers.
 
-class Circle:
-    def __init__(self,radius):
-        self.radius=radius
-        
-    def area(self):
-        return 3.14* self.radius * self.radius  
-    
-    def circumferance(self):
-        return 2 * 3.14 * self.radius
-    
-    def display(self):
-        print("area of circle : ",self.area())  
-        print("circumference of circle :",self.circumferance())
-        
-obj=Circle(4)
-obj.display()        
+import numpy as np
+arr=np.arange(1,21)
+
+even=arr[arr%2==0]
+odd=arr[arr%2!=0]
+
+print("array :",arr)
+print("even numbers :",even)
+print("odd numbers :",odd)

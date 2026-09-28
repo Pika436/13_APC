@@ -1,12 +1,28 @@
-#20.	Write a function that accepts basic salary and calculates gross salary after adding HRA and DA.
-def gross_salary(basic_salary):
-    hra = basic_salary * 0.20   # 20% HRA
-    da = basic_salary * 0.10    # 10% DA
+# 20.	Create a (2, 3, 4) array and calculate:
+'''•	Sum of all elements 
+•	Sum of each layer 
+•	Sum along rows 
+•	Sum along columns
+'''
 
-    gross = basic_salary + hra + da
-    return gross
+import numpy as np
 
+arr = np.arange(1, 25).reshape(2, 3, 4)
 
-basic = float(input("Enter basic salary: "))
+total = np.sum(arr)
 
-print("Gross Salary =", gross_salary(basic))
+layer_sum = np.sum(arr, axis=(1, 2))
+
+row_sum = np.sum(arr, axis=1)
+
+col_sum = np.sum(arr, axis=2)
+
+print("3D Array:")
+print(arr)
+
+print("Sum of all elements:", total)
+print("Sum of each layer:", layer_sum)
+print("Sum along rows:")
+print(row_sum)
+print("Sum along columns:")
+print(col_sum)

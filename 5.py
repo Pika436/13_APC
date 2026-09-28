@@ -1,23 +1,18 @@
-# 5.	Create a class Book containing book_id, title, author, and price. Create objects for three books and display their information.
+# 5.	Create a one-dimensional array containing numbers from 1 to 12. Reshape it into:
+'''•	2 × 6 matrix 
+•	3 × 4 matrix 
+•	4 × 3 matrix
+'''
 
-class Book:
-    def __init__(self,id,title,author,price):
-        self.id=id
-        self.title=title
-        self.author=author
-        self.price=price
-        
-    def display(self):
-        print("book id :",self.id)
-        print("book title :",self.title)
-        print("author :",self.author)
-        print("book price :",self.price)
-        
-b1=Book(111,"wings of fire","APJ abdul kalam",1000)
-b1.display()
+import numpy as np
+arr=np.arange(1,13)
 
-b2=Book(112,"Gitanjali","Rabindranath Tagore",1200)
-b2.display()
+print("original array :",arr)
+print("\n2*6 matrix :")
+print(arr.reshape(2,6))
 
-b3=Book(113,"Atomic Habit","James clear",800)
-b3.display()            
+print("\n3*4 matrix :")
+print(arr.reshape(3,4))
+
+print("\n4*3 matrix :")
+print(arr.reshape(4,3))

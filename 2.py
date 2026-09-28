@@ -1,29 +1,17 @@
-# 2.	Create a class Employee with attributes emp_id, name, and basic_salary. Define methods to calculate HRA, DA, and gross salary.
+# 2.	Create two NumPy arrays of 5 integers each. Perform and display:
+'''•	Addition 
+•	Subtraction 
+•	Multiplication 
+•	Division 
+•	Modulus
+'''
 
-class Employee:
-    def __init__(self,emp_id,name,basic_salary):
-        self.emp_id=emp_id
-        self.name=name
-        self.basic_salary=basic_salary
-     
-    def calculate_hra(self):
-        return self.basic_salary*0.20
-    
-    def calculate_da(self):
-        return self.basic_salary*0.10
-    
-    def calculate_gross(self):
-        hra=self.calculate_hra()
-        da=self.calculate_da()
-        return self.basic_salary + hra + da 
-    
-    def display(self):
-        print("employee id :",self.emp_id)
-        print("name :",self.name)
-        print("basic salary :",self.basic_salary)
-        print("HRA :",self.calculate_hra())
-        print("DA :",self.calculate_da())
-        print("Gross salary :",self.calculate_gross())
-        
-b=Employee(23,"ram",50000)
-b.display()        
+import numpy as np
+arr1=np.array([10,20,30,40,50])
+arr2=np.array([30,40,50,60,70])
+
+print("Addition :",arr1+arr2)
+print("substraction :",arr1-arr2)
+print("Multiplication :",arr1*arr2)
+print("division :",arr1/arr2)
+print("Modulus :",arr1%arr2)

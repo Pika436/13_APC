@@ -1,18 +1,17 @@
-#16.	Create a function to find the second-largest number in a list.
-def second_largest(numbers):
-    largest = numbers[0]
-    second = None
+# 16.	Store marks of 10 students in a NumPy array. Calculate:
+'''
+•	Highest marks 
+•	Lowest marks 
+•	Average marks 
+•	Median 
+•	Standard deviation
+'''
 
-    for num in numbers:
-        if num > largest:
-            second = largest
-            largest = num
-        elif num != largest and (second is None or num > second):
-            second = num
+import numpy as np
+arr=np.array([20,30,40,50,60,70,80,90,35,67])
 
-    return second
-
-
-numbers = [10, 25, 7, 45, 18]
-
-print("Second largest =", second_largest(numbers))
+print("highest :",np.max(arr))
+print("lowest marks :",np.min(arr))
+print("average marks :",np.mean(arr))
+print("madian :",np.median(arr))
+print("std :",np.std(arr))

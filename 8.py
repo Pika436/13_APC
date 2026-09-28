@@ -1,23 +1,11 @@
-# 8.	Create a class Patient containing patient ID, name, age, disease, and consultation fee. Define methods to display patient information and calculate the total bill.
+# 8.	Create a 3 × 4 matrix and display its transpose.
+import numpy as np
+A=np.array([[1,2,3],
+          [4,5,6],
+          [7,8,9]])
+T=A.T 
 
-class Patient:
-    def __init__(self,id,name,age,disease,fee):
-        self.id=id
-        self.name=name
-        self.age=age
-        self.disease=disease
-        self.fee=fee
-        
-    def display(self):
-        print("patient id :",self.id)
-        print("patient name :",self.name)
-        print("patient age :",self.age)
-        print("fees :",self.fee)
-        
-    def total_fee(self):
-        return self.fee
-    
-p1=Patient(111,"priya",21,"fever",700)
-p1.display()
-print("Total Bill :",p1.total_fee())    
-            
+print("original matrix :")
+print(A)
+print("transpose of matrix :")
+print(T)

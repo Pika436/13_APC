@@ -1,19 +1,9 @@
-# 3.Create a class Rectangle with attributes length and breadth. Define methods to calculate area and perimeter.
+# 3.	Create a NumPy array containing 10 numbers. Find and display the maximum, minimum, sum, and average of the elements.
+import numpy as np
+arr=np.array([11,12,13,14,15,16,17,18,19,20])
 
-class Rectangle:
-    def __init__(self,length,breadth):
-        self.length=length
-        self.breadth=breadth
-        
-    def area(self):
-        return self.length*self.breadth
-    
-    def perimeter(self):
-        return 2*self.length + 2*self.breadth
-    
-    def display(self):
-        print("Area= ",self.area())
-        print("Perimeter= ",self.perimeter())
-        
-obj=Rectangle(30,10)
-obj.display()        
+print("array :",arr)
+print("maximum :",np.max(arr))
+print("minimum :",np.min(arr))
+print("sum :",np.sum(arr))
+print("average :",np.mean(arr))

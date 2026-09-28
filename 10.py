@@ -1,14 +1,16 @@
-#10.Define a function that accepts a string and returns the number of vowels present in it.
-def count_vowels(string):
-    count = 0
+# 10.	Create a 4 × 4 matrix and calculate the sum of each row and each column separately.
+import numpy as np
+arr=np.array([[1,2,3,4],
+              [5,6,7,8],
+              [8,9,10,11],
+              [12,13,14,15]])
 
-    for ch in string:
-        if ch.lower() in "aeiou":
-            count += 1
+row_sum=np.sum(arr,axis=1)
+col_sum=np.sum(arr,axis=0)
 
-    return count
-
-
-string = input("Enter a string: ")
-
-print("Number of vowels =", count_vowels(string))
+print("matrix")
+print(arr)
+print("sum of each row :")
+print(row_sum)
+print("sum of each column :")
+print(col_sum)

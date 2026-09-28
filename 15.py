@@ -1,14 +1,18 @@
-#15.	Write a function that accepts a list and returns a new list containing only unique elements.
-def unique_elements(my_list):
-    unique = []
+# 15.	Create two NumPy arrays and concatenate them horizontally and vertically. 
+import numpy as np
+A=np.array([[1,2,3],
+            [4,5,6]])
+B=np.array([[7,8,9],
+           [3,2,1]])
 
-    for item in my_list:
-        if item not in unique:
-            unique.append(item)
+horizontal=np.hstack((A,B))
+vertical=np.vstack((A,B))
 
-    return unique
-
-
-my_list = [10, 20, 10, 30, 20, 40, 30]
-
-print("Unique elements =", unique_elements(my_list))
+print("array A :")
+print(A)
+print("array B :")
+print(B)
+print(" horizontal concatination :")
+print(horizontal)
+print("verticle concatination :")
+print(vertical)

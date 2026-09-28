@@ -1,21 +1,8 @@
-# 1.Create a class Student with attributes such as roll_no, name, and marks. Create objects for multiple students and display their details and percentage.
+#1.	Write a Python program using NumPy to create a one-dimensional array containing 10 integers and display the array, its size, data type, and number of dimensions.
 
-class Student:
-    def __init__(self,rn,name,marks):
-        self.rn=rn
-        self.name=name
-        self.marks=marks
-    
-    def display(self):
-        print("roll no: ",self.rn)
-        print("name :",self.name)
-        print("marks :",self.marks)
-        print("percentage :",self.marks,"%")
-     
-obj1=Student(13,"prachi",80)
-obj1.display()
-
-obj2=Student(32,"aman",79)
-obj2.display()
-        
-            
+import numpy as np
+arr=np.array([10,20,30,40,50,60,70,80,90,100])
+print("array :",arr)
+print("size :",arr.size)
+print("data type :",arr.dtype)
+print("number of dimensions :",arr.ndim)
