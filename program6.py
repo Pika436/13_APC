@@ -1,39 +1,47 @@
-# Q6. Create abstract Transport with calculate_fare(distance).
-# Implement Bus, Train, Taxi, and Flight.
+# Q6. Create Student with calculate_grade().
+# Derive EngineeringStudent, MedicalStudent, and ManagementStudent.
+# Override calculate_grade() according to different criteria.
 
-from abc import ABC, abstractmethod
-
-
-class Transport(ABC):
-
-    @abstractmethod
-    def calculate_fare(self, distance):
+class Student:
+    def calculate_grade(self, marks):
         pass
 
 
-class Bus(Transport):
-    def calculate_fare(self, distance):
-        return distance * 2
+class EngineeringStudent(Student):
+    def calculate_grade(self, marks):
+        if marks >= 85:
+            return "A"
+        elif marks >= 70:
+            return "B"
+        else:
+            return "C"
 
 
-class Train(Transport):
-    def calculate_fare(self, distance):
-        return distance * 1.5
+class MedicalStudent(Student):
+    def calculate_grade(self, marks):
+        if marks >= 90:
+            return "Distinction"
+        elif marks >= 75:
+            return "First Class"
+        else:
+            return "Pass"
 
 
-class Taxi(Transport):
-    def calculate_fare(self, distance):
-        return distance * 10
+class ManagementStudent(Student):
+    def calculate_grade(self, marks):
+        if marks >= 80:
+            return "Excellent"
+        elif marks >= 60:
+            return "Good"
+        else:
+            return "Pass"
 
 
-class Flight(Transport):
-    def calculate_fare(self, distance):
-        return distance * 8
+students = [
+    EngineeringStudent(),
+    MedicalStudent(),
+    ManagementStudent()
+]
 
-
-distance = 100
-
-transports = [Bus(), Train(), Taxi(), Flight()]
-
-for transport in transports:
-    print("Fare:", transport.calculate_fare(distance))
+for student in students:
+    print(student.calculate_grade(85))

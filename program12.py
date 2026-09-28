@@ -1,18 +1,31 @@
-# 12. Read a text file and count how many times each word occurs. Display the result using a dictionary.
+# Q12. Create Payment with make_payment().
+# Create UPIPayment, CardPayment, and WalletPayment.
+# Demonstrate polymorphism using a common function.
 
-with open("student.txt", "r") as file:
-    content = file.read()
+class Payment:
+    def make_payment(self, amount):
+        pass
 
-words = content.split()
 
-word_count = {}
+class UPIPayment(Payment):
+    def make_payment(self, amount):
+        print("Paid ₹", amount, "using UPI")
 
-for word in words:
-    if word in word_count:
-        word_count[word] += 1
-    else:
-        word_count[word] = 1
 
-print("Word frequency:")
-print(word_count)
-    
+class CardPayment(Payment):
+    def make_payment(self, amount):
+        print("Paid ₹", amount, "using Card")
+
+
+class WalletPayment(Payment):
+    def make_payment(self, amount):
+        print("Paid ₹", amount, "using Wallet")
+
+
+def process_payment(payment, amount):
+    payment.make_payment(amount)
+
+
+process_payment(UPIPayment(), 1000)
+process_payment(CardPayment(), 2000)
+process_payment(WalletPayment(), 500)

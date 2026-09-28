@@ -1,50 +1,32 @@
-# Q5. Create abstract Patient with calculate_bill() and treatment().
-# Derive InPatient, OutPatient, and EmergencyPatient.
+# Q5. Create Notification with send().
+# Derive EmailNotification, SMSNotification, and PushNotification.
+# Override send().
 
-from abc import ABC, abstractmethod
-
-
-class Patient(ABC):
-
-    @abstractmethod
-    def calculate_bill(self):
-        pass
-
-    @abstractmethod
-    def treatment(self):
+class Notification:
+    def send(self):
         pass
 
 
-class InPatient(Patient):
-    def calculate_bill(self):
-        return 10000
-
-    def treatment(self):
-        return "Hospital Admission"
+class EmailNotification(Notification):
+    def send(self):
+        print("Sending Email Notification")
 
 
-class OutPatient(Patient):
-    def calculate_bill(self):
-        return 2000
-
-    def treatment(self):
-        return "Regular Checkup"
+class SMSNotification(Notification):
+    def send(self):
+        print("Sending SMS Notification")
 
 
-class EmergencyPatient(Patient):
-    def calculate_bill(self):
-        return 15000
-
-    def treatment(self):
-        return "Emergency Treatment"
+class PushNotification(Notification):
+    def send(self):
+        print("Sending Push Notification")
 
 
-patients = [
-    InPatient(),
-    OutPatient(),
-    EmergencyPatient()
+notifications = [
+    EmailNotification(),
+    SMSNotification(),
+    PushNotification()
 ]
 
-for patient in patients:
-    print("Treatment:", patient.treatment())
-    print("Bill:", patient.calculate_bill())
+for notification in notifications:
+    notification.send()

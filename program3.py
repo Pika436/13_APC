@@ -1,52 +1,28 @@
-# Q3. Create abstract BankAccount with deposit() and withdraw().
-# Derive SavingsAccount and CurrentAccount and implement operations.
+# Q3. Create Vehicle with start().
+# Derive Car, Bike, and Bus.
+# Override start() to display different starting behavior.
 
-from abc import ABC, abstractmethod
-
-
-class BankAccount(ABC):
-
-    @abstractmethod
-    def deposit(self, amount):
-        pass
-
-    @abstractmethod
-    def withdraw(self, amount):
+class Vehicle:
+    def start(self):
         pass
 
 
-class SavingsAccount(BankAccount):
-    def __init__(self, balance):
-        self.balance = balance
-
-    def deposit(self, amount):
-        self.balance += amount
-        print("Deposited:", amount)
-
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance -= amount
-            print("Withdrawn:", amount)
-        else:
-            print("Insufficient balance")
+class Car(Vehicle):
+    def start(self):
+        print("Car starts with a key.")
 
 
-class CurrentAccount(BankAccount):
-    def __init__(self, balance):
-        self.balance = balance
-
-    def deposit(self, amount):
-        self.balance += amount
-        print("Deposited:", amount)
-
-    def withdraw(self, amount):
-        self.balance -= amount
-        print("Withdrawn:", amount)
+class Bike(Vehicle):
+    def start(self):
+        print("Bike starts with a self-start button.")
 
 
-account = SavingsAccount(10000)
+class Bus(Vehicle):
+    def start(self):
+        print("Bus starts with a large engine.")
 
-account.deposit(2000)
-account.withdraw(3000)
 
-print("Balance:", account.balance)
+vehicles = [Car(), Bike(), Bus()]
+
+for vehicle in vehicles:
+    vehicle.start()

@@ -1,13 +1,28 @@
-# 14. Read a text file and replace all occurrences of a specified word with another word. Save the modified text in the same file or a new file. 
-old_word = input("Enter word to replace: ")
-new_word = input("Enter new word: ")
+# Q14. Create Media with play().
+# Derive Audio, Video, and Podcast.
+# Override play() according to media type.
 
-with open("student.txt", "r") as file:
-    content = file.read()
+class Media:
+    def play(self):
+        pass
 
-content = content.replace(old_word, new_word)
 
-with open("student.txt", "w") as file:
-    file.write(content)
+class Audio(Media):
+    def play(self):
+        print("Playing Audio")
 
-print("Word replaced successfully.")
+
+class Video(Media):
+    def play(self):
+        print("Playing Video")
+
+
+class Podcast(Media):
+    def play(self):
+        print("Playing Podcast")
+
+
+media_list = [Audio(), Video(), Podcast()]
+
+for media in media_list:
+    media.play()

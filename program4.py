@@ -1,40 +1,33 @@
+# Q4. Create Animal with sound().
+# Create Dog, Cat, Cow, and Lion.
+# Override sound() in each class.
 
-# Q4. Create abstract FoodOrder with calculate_bill()
-# and delivery_charge().
-# Derive RestaurantOrder and HomeDeliveryOrder.
-
-from abc import ABC, abstractmethod
-
-
-class FoodOrder(ABC):
-
-    @abstractmethod
-    def calculate_bill(self):
-        pass
-
-    @abstractmethod
-    def delivery_charge(self):
+class Animal:
+    def sound(self):
         pass
 
 
-class RestaurantOrder(FoodOrder):
-    def calculate_bill(self):
-        return 500
-
-    def delivery_charge(self):
-        return 0
+class Dog(Animal):
+    def sound(self):
+        print("Dog: Woof")
 
 
-class HomeDeliveryOrder(FoodOrder):
-    def calculate_bill(self):
-        return 500
-
-    def delivery_charge(self):
-        return 50
+class Cat(Animal):
+    def sound(self):
+        print("Cat: Meow")
 
 
-orders = [RestaurantOrder(), HomeDeliveryOrder()]
+class Cow(Animal):
+    def sound(self):
+        print("Cow: Moo")
 
-for order in orders:
-    total = order.calculate_bill() + order.delivery_charge()
-    print("Total Bill:", total)
+
+class Lion(Animal):
+    def sound(self):
+        print("Lion: Roar")
+
+
+animals = [Dog(), Cat(), Cow(), Lion()]
+
+for animal in animals:
+    animal.sound()

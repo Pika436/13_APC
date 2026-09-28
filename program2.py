@@ -1,46 +1,28 @@
-# Q2. Create abstract Vehicle with start() and stop().
-# Derive Car, Bike, and Bus and implement these methods.
+# Q2. Create Employee with calculate_salary().
+# Derive Manager, Developer, and Tester.
+# Override calculate_salary() according to role.
 
-from abc import ABC, abstractmethod
-
-
-class Vehicle(ABC):
-
-    @abstractmethod
-    def start(self):
-        pass
-
-    @abstractmethod
-    def stop(self):
+class Employee:
+    def calculate_salary(self):
         pass
 
 
-class Car(Vehicle):
-    def start(self):
-        print("Car Started")
-
-    def stop(self):
-        print("Car Stopped")
+class Manager(Employee):
+    def calculate_salary(self):
+        return 70000
 
 
-class Bike(Vehicle):
-    def start(self):
-        print("Bike Started")
-
-    def stop(self):
-        print("Bike Stopped")
+class Developer(Employee):
+    def calculate_salary(self):
+        return 60000
 
 
-class Bus(Vehicle):
-    def start(self):
-        print("Bus Started")
-
-    def stop(self):
-        print("Bus Stopped")
+class Tester(Employee):
+    def calculate_salary(self):
+        return 50000
 
 
-vehicles = [Car(), Bike(), Bus()]
+employees = [Manager(), Developer(), Tester()]
 
-for vehicle in vehicles:
-    vehicle.start()
-    vehicle.stop()
+for employee in employees:
+    print("Salary:", employee.calculate_salary())

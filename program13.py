@@ -1,15 +1,32 @@
-# 13. Accept a word from the user and search for it in a text file. Display the number of occurrences and the line numbers where it appears. 
-word = input("Enter word: ")
+# Q13. Create Person with display_role().
+# Derive Student, Faculty, and Administrator.
+# Store objects in a list and invoke the same method using a loop.
 
-count = 0
-line_no = 0
+class Person:
+    def display_role(self):
+        pass
 
-with open("student.txt", "r") as file:
-    for line in file:
-        line_no += 1
-        
-        if word in line:
-            count += line.count(word)
-            print("Found in line:", line_no)
 
-print("Total occurrences:", count)
+class Student(Person):
+    def display_role(self):
+        print("Role: Student")
+
+
+class Faculty(Person):
+    def display_role(self):
+        print("Role: Faculty")
+
+
+class Administrator(Person):
+    def display_role(self):
+        print("Role: Administrator")
+
+
+people = [
+    Student(),
+    Faculty(),
+    Administrator()
+]
+
+for person in people:
+    person.display_role()

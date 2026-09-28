@@ -1,50 +1,29 @@
-# Q9. Create abstract CloudStorage with upload_file(),
-# download_file(), and delete_file().
-# Create subclasses for different storage services.
+# Q9. Create Distance with feet and inches.
+# Overload + operator to add two distance objects.
+# Display the result in normalized form.
 
-from abc import ABC, abstractmethod
+class Distance:
+    def __init__(self, feet, inches):
+        self.feet = feet
+        self.inches = inches
 
+    def __add__(self, other):
+        total_inches = self.inches + other.inches
+        total_feet = self.feet + other.feet
 
-class CloudStorage(ABC):
+        if total_inches >= 12:
+            total_feet += total_inches // 12
+            total_inches = total_inches % 12
 
-    @abstractmethod
-    def upload_file(self):
-        pass
+        return Distance(total_feet, total_inches)
 
-    @abstractmethod
-    def download_file(self):
-        pass
-
-    @abstractmethod
-    def delete_file(self):
-        pass
-
-
-class GoogleDrive(CloudStorage):
-    def upload_file(self):
-        print("File uploaded to Google Drive")
-
-    def download_file(self):
-        print("File downloaded from Google Drive")
-
-    def delete_file(self):
-        print("File deleted from Google Drive")
+    def display(self):
+        print(self.feet, "feet", self.inches, "inches")
 
 
-class OneDrive(CloudStorage):
-    def upload_file(self):
-        print("File uploaded to OneDrive")
+d1 = Distance(5, 8)
+d2 = Distance(4, 7)
 
-    def download_file(self):
-        print("File downloaded from OneDrive")
+d3 = d1 + d2
 
-    def delete_file(self):
-        print("File deleted from OneDrive")
-
-
-services = [GoogleDrive(), OneDrive()]
-
-for service in services:
-    service.upload_file()
-    service.download_file()
-    service.delete_file()
+d3.display()

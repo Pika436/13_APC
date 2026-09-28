@@ -1,11 +1,49 @@
-# 15. Read a Python source file and create another file after removing single-line comments. 
-with open("program.py", "r") as file:
-    lines = file.readlines()
+# Q15. Create SmartDevice with turn_on() and turn_off().
+# Derive Light, Fan, AC, and TV.
+# Override methods according to each device.
 
-with open("new_program.py", "w") as file:
-    for line in lines:
-        if "#" in line:
-            line = line.split("#")[0]
-        file.write(line)
+class SmartDevice:
+    def turn_on(self):
+        pass
 
-print("Comments removed successfully.")
+    def turn_off(self):
+        pass
+
+
+class Light(SmartDevice):
+    def turn_on(self):
+        print("Light is ON")
+
+    def turn_off(self):
+        print("Light is OFF")
+
+
+class Fan(SmartDevice):
+    def turn_on(self):
+        print("Fan is ON")
+
+    def turn_off(self):
+        print("Fan is OFF")
+
+
+class AC(SmartDevice):
+    def turn_on(self):
+        print("AC is ON")
+
+    def turn_off(self):
+        print("AC is OFF")
+
+
+class TV(SmartDevice):
+    def turn_on(self):
+        print("TV is ON")
+
+    def turn_off(self):
+        print("TV is OFF")
+
+
+devices = [Light(), Fan(), AC(), TV()]
+
+for device in devices:
+    device.turn_on()
+    device.turn_off()

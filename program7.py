@@ -1,40 +1,32 @@
-# Q7. Create abstract Question with evaluate_answer().
-# Derive MCQQuestion, TrueFalseQuestion, and DescriptiveQuestion.
-# Implement answer evaluation for each.
+# Q7. Create BankAccount with calculate_interest().
+# Derive SavingsAccount, CurrentAccount, and FixedDepositAccount.
+# Override the method for different interest rates.
 
-from abc import ABC, abstractmethod
-
-
-class Question(ABC):
-
-    @abstractmethod
-    def evaluate_answer(self, answer):
+class BankAccount:
+    def calculate_interest(self, balance):
         pass
 
 
-class MCQQuestion(Question):
-    def evaluate_answer(self, answer):
-        if answer == "B":
-            return "Correct MCQ Answer"
-        return "Wrong Answer"
+class SavingsAccount(BankAccount):
+    def calculate_interest(self, balance):
+        return balance * 0.05
 
 
-class TrueFalseQuestion(Question):
-    def evaluate_answer(self, answer):
-        if answer == "True":
-            return "Correct True/False Answer"
-        return "Wrong Answer"
+class CurrentAccount(BankAccount):
+    def calculate_interest(self, balance):
+        return balance * 0.02
 
 
-class DescriptiveQuestion(Question):
-    def evaluate_answer(self, answer):
-        if len(answer) > 20:
-            return "Answer Accepted"
-        return "Answer Too Short"
+class FixedDepositAccount(BankAccount):
+    def calculate_interest(self, balance):
+        return balance * 0.08
 
 
-print(MCQQuestion().evaluate_answer("B"))
-print(TrueFalseQuestion().evaluate_answer("True"))
-print(DescriptiveQuestion().evaluate_answer(
-    "Python supports object oriented programming."
-))
+accounts = [
+    SavingsAccount(),
+    CurrentAccount(),
+    FixedDepositAccount()
+]
+
+for account in accounts:
+    print("Interest:", account.calculate_interest(100000))

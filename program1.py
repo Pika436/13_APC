@@ -1,13 +1,10 @@
-# Q1. Create an abstract class Shape with abstract method area().
-# Derive Circle, Rectangle, and Triangle and implement area().
+# Q1. Create Shape with area().
+# Derive Circle, Rectangle, and Triangle.
+# Override area() in each class and demonstrate runtime polymorphism.
 
-from abc import ABC, abstractmethod
 import math
 
-
-class Shape(ABC):
-
-    @abstractmethod
+class Shape:
     def area(self):
         pass
 
@@ -27,6 +24,7 @@ class Triangle(Shape):
         return 0.5 * 10 * 8
 
 
-print("Circle Area:", Circle().area())
-print("Rectangle Area:", Rectangle().area())
-print("Triangle Area:", Triangle().area())
+shapes = [Circle(), Rectangle(), Triangle()]
+
+for shape in shapes:
+    print("Area:", shape.area())

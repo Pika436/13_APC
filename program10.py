@@ -1,52 +1,20 @@
-# Q10. Create abstract Appointment with book_appointment()
-# and calculate_fee().
-# Derive GeneralAppointment, SpecialistAppointment,
-# and EmergencyAppointment.
+# Q10. Create Student with name and total marks.
+# Overload > and < operators to compare two students.
 
-from abc import ABC, abstractmethod
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
 
+    def __gt__(self, other):
+        return self.marks > other.marks
 
-class Appointment(ABC):
-
-    @abstractmethod
-    def book_appointment(self):
-        pass
-
-    @abstractmethod
-    def calculate_fee(self):
-        pass
+    def __lt__(self, other):
+        return self.marks < other.marks
 
 
-class GeneralAppointment(Appointment):
-    def book_appointment(self):
-        print("General appointment booked.")
+s1 = Student("Pallavi", 450)
+s2 = Student("Rahul", 400)
 
-    def calculate_fee(self):
-        return 500
-
-
-class SpecialistAppointment(Appointment):
-    def book_appointment(self):
-        print("Specialist appointment booked.")
-
-    def calculate_fee(self):
-        return 1000
-
-
-class EmergencyAppointment(Appointment):
-    def book_appointment(self):
-        print("Emergency appointment booked.")
-
-    def calculate_fee(self):
-        return 2000
-
-
-appointments = [
-    GeneralAppointment(),
-    SpecialistAppointment(),
-    EmergencyAppointment()
-]
-
-for appointment in appointments:
-    appointment.book_appointment()
-    print("Fee:", appointment.calculate_fee())
+print("Pallavi > Rahul:", s1 > s2)
+print("Pallavi < Rahul:", s1 < s2)

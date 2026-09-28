@@ -1,36 +1,31 @@
-# Q8. Create abstract Authentication with authenticate().
-# Implement Password, OTP, and Biometric authentication.
+# Q8. Create Report with generate().
+# Derive PDFReport, ExcelReport, and HTMLReport.
+# Write a function that accepts any report object.
 
-from abc import ABC, abstractmethod
-
-
-class Authentication(ABC):
-
-    @abstractmethod
-    def authenticate(self):
+class Report:
+    def generate(self):
         pass
 
 
-class PasswordAuthentication(Authentication):
-    def authenticate(self):
-        print("Authenticated using Password")
+class PDFReport(Report):
+    def generate(self):
+        print("Generating PDF Report")
 
 
-class OTPAuthentication(Authentication):
-    def authenticate(self):
-        print("Authenticated using OTP")
+class ExcelReport(Report):
+    def generate(self):
+        print("Generating Excel Report")
 
 
-class BiometricAuthentication(Authentication):
-    def authenticate(self):
-        print("Authenticated using Biometric")
+class HTMLReport(Report):
+    def generate(self):
+        print("Generating HTML Report")
 
 
-methods = [
-    PasswordAuthentication(),
-    OTPAuthentication(),
-    BiometricAuthentication()
-]
+def generate_report(report):
+    report.generate()
 
-for method in methods:
-    method.authenticate()
+
+generate_report(PDFReport())
+generate_report(ExcelReport())
+generate_report(HTMLReport())
