@@ -1,18 +1,50 @@
-# 9. Read a text file and count the number of vowels and consonants present in the file.
+# Q9. Create abstract CloudStorage with upload_file(),
+# download_file(), and delete_file().
+# Create subclasses for different storage services.
+
+from abc import ABC, abstractmethod
 
 
-with open("student.txt", "r") as file:
-    content = file.read()
+class CloudStorage(ABC):
 
-vowels = 0
-consonants = 0
+    @abstractmethod
+    def upload_file(self):
+        pass
 
-for ch in content:
-    if ch.isalpha():
-        if ch.lower() in "aeiou":
-            vowels += 1
-        else:
-            consonants += 1
+    @abstractmethod
+    def download_file(self):
+        pass
 
-print("Total vowels:", vowels)
-print("Total consonants:", consonants)
+    @abstractmethod
+    def delete_file(self):
+        pass
+
+
+class GoogleDrive(CloudStorage):
+    def upload_file(self):
+        print("File uploaded to Google Drive")
+
+    def download_file(self):
+        print("File downloaded from Google Drive")
+
+    def delete_file(self):
+        print("File deleted from Google Drive")
+
+
+class OneDrive(CloudStorage):
+    def upload_file(self):
+        print("File uploaded to OneDrive")
+
+    def download_file(self):
+        print("File downloaded from OneDrive")
+
+    def delete_file(self):
+        print("File deleted from OneDrive")
+
+
+services = [GoogleDrive(), OneDrive()]
+
+for service in services:
+    service.upload_file()
+    service.download_file()
+    service.delete_file()

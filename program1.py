@@ -1,15 +1,32 @@
-#  Write a Python program to create a file named student.txt and write the student's name, roll number, branch, and semester into the file. 
+# Q1. Create an abstract class Shape with abstract method area().
+# Derive Circle, Rectangle, and Triangle and implement area().
+
+from abc import ABC, abstractmethod
+import math
 
 
-name = input("Enter student name: ")
-roll_no = input("Enter roll number: ")
-branch = input("Enter branch: ")
-semester = input("Enter semester: ")
+class Shape(ABC):
 
-with open("student.txt", "w") as file:
-    file.write("Student Name: " + name + "\n")
-    file.write("Roll Number: " + roll_no + "\n")
-    file.write("Branch: " + branch + "\n")
-    file.write("Semester: " + semester + "\n")
+    @abstractmethod
+    def area(self):
+        pass
 
-print("Student details written successfully.")
+
+class Circle(Shape):
+    def area(self):
+        return math.pi * 5 * 5
+
+
+class Rectangle(Shape):
+    def area(self):
+        return 10 * 5
+
+
+class Triangle(Shape):
+    def area(self):
+        return 0.5 * 10 * 8
+
+
+print("Circle Area:", Circle().area())
+print("Rectangle Area:", Rectangle().area())
+print("Triangle Area:", Triangle().area())

@@ -1,7 +1,36 @@
-# 8. Write a program to read a text file and display its lines in reverse order. 
+# Q8. Create abstract Authentication with authenticate().
+# Implement Password, OTP, and Biometric authentication.
 
-with open("student.txt", "r") as file:
-    lines = file.readlines()
+from abc import ABC, abstractmethod
 
-for line in reversed(lines):
-    print(line, end="")
+
+class Authentication(ABC):
+
+    @abstractmethod
+    def authenticate(self):
+        pass
+
+
+class PasswordAuthentication(Authentication):
+    def authenticate(self):
+        print("Authenticated using Password")
+
+
+class OTPAuthentication(Authentication):
+    def authenticate(self):
+        print("Authenticated using OTP")
+
+
+class BiometricAuthentication(Authentication):
+    def authenticate(self):
+        print("Authenticated using Biometric")
+
+
+methods = [
+    PasswordAuthentication(),
+    OTPAuthentication(),
+    BiometricAuthentication()
+]
+
+for method in methods:
+    method.authenticate()

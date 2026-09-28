@@ -1,23 +1,52 @@
-# 10. Read a text file and calculate the number of alphabets, digits, spaces, and special characters
+# Q10. Create abstract Appointment with book_appointment()
+# and calculate_fee().
+# Derive GeneralAppointment, SpecialistAppointment,
+# and EmergencyAppointment.
 
-with open("student.txt",'r') as f:
-    content=f.read()
-alpha=0
-digit=0
-space=0
-special=0
-for ch in content:
-    if ch.isalpha():    
-        alpha+=1
-    elif ch.isdigit():
-        digit+=1
-    elif ch.isspace():
-        space+=1
-    else:
-        special+=1
+from abc import ABC, abstractmethod
 
-print("total alphabets :",alpha) 
-print("total digits:",digit) 
-print("total space :",space) 
-print("total special character :",special) 
-                   
+
+class Appointment(ABC):
+
+    @abstractmethod
+    def book_appointment(self):
+        pass
+
+    @abstractmethod
+    def calculate_fee(self):
+        pass
+
+
+class GeneralAppointment(Appointment):
+    def book_appointment(self):
+        print("General appointment booked.")
+
+    def calculate_fee(self):
+        return 500
+
+
+class SpecialistAppointment(Appointment):
+    def book_appointment(self):
+        print("Specialist appointment booked.")
+
+    def calculate_fee(self):
+        return 1000
+
+
+class EmergencyAppointment(Appointment):
+    def book_appointment(self):
+        print("Emergency appointment booked.")
+
+    def calculate_fee(self):
+        return 2000
+
+
+appointments = [
+    GeneralAppointment(),
+    SpecialistAppointment(),
+    EmergencyAppointment()
+]
+
+for appointment in appointments:
+    appointment.book_appointment()
+    print("Fee:", appointment.calculate_fee())
