@@ -1,21 +1,32 @@
-# 9.	Create a 4 × 4 NumPy array and write a program to:
-'''
-•	Display the first row 
-•	Display the last column 
-•	Display the diagonal elements 
-•	Display the elements from the second and third rows
-'''
-import numpy as np
-arr=np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+# 9.8.	Create a Pandas Series using a dictionary containing employee names and their salaries.
+'''Perform:
+•	Display the Series. 
+•	Find the highest salary. 
+•	Find the lowest salary. 
+•	Calculate average salary. 
+•	Display employees earning more than ₹50,000.'''
 
-print("first row :")
-print(arr[0: ])
 
-print("last column :")
-print(arr[ :-1])
+import pandas as pd
+employees = {
+    "Prachi": 45000,
+    "Rahul": 60000,
+    "Sneha": 75000,
+    "Amit": 35000,
+    "Priya": 55000
+}
 
-print("diagonal element :")
-print(np.diag(arr))
+s = pd.Series(employees)
 
-print("second and third row element :")
-print(arr[1:3,:])
+print("Employee Salaries:")
+print(s)
+
+print("\nHighest Salary:", s.max())
+
+print("Lowest Salary:", s.min())
+
+print("Average Salary:", s.mean())
+
+print("\nEmployees earning more than Rs. 50000:")
+print(s[s > 50000])
+

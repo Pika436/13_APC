@@ -1,9 +1,27 @@
-# 3.	Create a NumPy array containing 10 numbers. Find and display the maximum, minimum, sum, and average of the elements.
-import numpy as np
-arr=np.array([11,12,13,14,15,16,17,18,19,20])
+# 3.3.	Create a dictionary containing:
+'''Product ID
+Product Name
+Category
+Price
+Quantity
+Convert it into a DataFrame.
+Calculate:
+Total Amount = Price × Quantity
+Then find the product having the highest total sales.'''
+import pandas as pd
+products={
+    "id":[111,112,113,114,115],
+    "name":["table","tv","chair","soap","pan"],
+    "category":["furniture","electrical","furniture","grosary","kitchen"],
+    "price":[4000,10000,2000,100,600],
+    "quantity":[2,1,4,12,4]
+}
+df=pd.DataFrame(products)
 
-print("array :",arr)
-print("maximum :",np.max(arr))
-print("minimum :",np.min(arr))
-print("sum :",np.sum(arr))
-print("average :",np.mean(arr))
+df["total_amount"]=df["price"]*df["quantity"]
+print("total amount :")
+print(df[["id","name","total_amount"]])
+
+highest_sale=df["total_amount"].max()
+print("highest sale :")
+print(df[df["total_amount"]==highest_sale])

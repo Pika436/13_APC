@@ -1,16 +1,32 @@
-# 10.	Create a 4 × 4 matrix and calculate the sum of each row and each column separately.
-import numpy as np
-arr=np.array([[1,2,3,4],
-              [5,6,7,8],
-              [8,9,10,11],
-              [12,13,14,15]])
+#10.9.	Create a Pandas Series using a dictionary containing product names and prices.
+'''Perform:
+•	Display all products and prices. 
+•	Increase every price by 10%. 
+•	Find the most expensive product. 
+•	Find products costing more than ₹1,000. '''
 
-row_sum=np.sum(arr,axis=1)
-col_sum=np.sum(arr,axis=0)
 
-print("matrix")
-print(arr)
-print("sum of each row :")
-print(row_sum)
-print("sum of each column :")
-print(col_sum)
+import pandas as pd
+products = {
+    "Laptop": 50000,
+    "Mouse": 500,
+    "Keyboard": 1500,
+    "Headphones": 2000,
+    "Pendrive": 800
+}
+
+s = pd.Series(products)
+
+print("Products and Prices:")
+print(s)
+
+s = s * 1.10
+print("\nPrices after 10% Increase:")
+print(s)
+
+print("\nMost Expensive Product:")
+print(s.idxmax(), ":", s.max())
+
+print("\nProducts costing more than Rs. 1000:")
+print(s[s > 1000])
+

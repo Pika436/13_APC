@@ -1,18 +1,29 @@
-# 15.	Create two NumPy arrays and concatenate them horizontally and vertically. 
-import numpy as np
-A=np.array([[1,2,3],
-            [4,5,6]])
-B=np.array([[7,8,9],
-           [3,2,1]])
+#15.	Dataset: weather.csv
+'''Columns:
+Date,City,Temperature,Humidity,Rainfall
+Problem Statement:
+Read the CSV file and:
+1.	Find the maximum temperature. 
+2.	Find the minimum temperature. 
+3.	Calculate the average temperature. 
+4.	Display records where temperature is above 35°C. 
+5.	Calculate city-wise average temperature.'''
 
-horizontal=np.hstack((A,B))
-vertical=np.vstack((A,B))
 
-print("array A :")
-print(A)
-print("array B :")
-print(B)
-print(" horizontal concatination :")
-print(horizontal)
-print("verticle concatination :")
-print(vertical)
+import pandas as pd
+df = pd.read_csv("weather.csv")
+print("Weather Data:")
+print(df)
+
+print("\nMaximum Temperature:", df["Temperature"].max(), "°C")
+
+print("Minimum Temperature:", df["Temperature"].min(), "°C")
+
+print("Average Temperature:", df["Temperature"].mean(), "°C")
+
+print("\nRecords with Temperature Above 35°C:")
+print(df[df["Temperature"] > 35])
+
+print("\nCity-wise Average Temperature:")
+print(df.groupby("City")["Temperature"].mean())
+

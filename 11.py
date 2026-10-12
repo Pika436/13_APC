@@ -1,15 +1,33 @@
-#11.	Create a NumPy array containing numbers from 1 to 20. Using slicing, display:
-'''
-•	First 5 elements 
-•	Last 5 elements 
-•	Alternate elements 
-•	Elements in reverse order
-'''
+#11.10.	Create a Pandas Series using a dictionary where patient IDs are the index and patient ages are the values.
+'''Perform:
+•	Find the average age. 
+•	Find the oldest patient. 
+•	Find the youngest patient. 
+•	Display patients above 60 years.'''
 
-import numpy as np
-arr=np.arange(1,21)
+import pandas as pd
+patients = {
+    101: 45,
+    102: 67,
+    103: 32,
+    104: 78,
+    105: 61
+}
+s = pd.Series(patients)
 
-print("First 5 elements :",arr[:5])
-print("last 5 elements :",arr[5:])
-print("alternate element :",arr[::2])
-print("element in reverse order :",arr[::-1])
+print("Patient Ages:")
+print(s)
+
+print("\nAverage Age:", s.mean())
+
+print("\nOldest Patient:")
+print("Patient ID:", s.idxmax())
+print("Age:", s.max())
+
+print("\nYoungest Patient:")
+print("Patient ID:", s.idxmin())
+print("Age:", s.min())
+
+print("\nPatients above 60 years:")
+print(s[s > 60])
+

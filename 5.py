@@ -1,18 +1,43 @@
-# 5.	Create a one-dimensional array containing numbers from 1 to 12. Reshape it into:
-'''•	2 × 6 matrix 
-•	3 × 4 matrix 
-•	4 × 3 matrix
-'''
+# 5.5.	Create a dictionary containing:
+'''Order_ID
+Customer
+Product
+Quantity
+Price
+Discount
+Create a DataFrame and calculate:
+Final Amount = Quantity × Price − Discount
+Then display:
+•	All orders 
+•	Orders above ₹5,000 
+•	Highest-value order 
+•	Average order value '''
 
-import numpy as np
-arr=np.arange(1,13)
 
-print("original array :",arr)
-print("\n2*6 matrix :")
-print(arr.reshape(2,6))
+import pandas as pd
 
-print("\n3*4 matrix :")
-print(arr.reshape(3,4))
+orders = {
+    "Order_ID": [101, 102, 103, 104, 105],
+    "Customer": ["Prachi", "Rahul", "Sneha", "Amit", "Priya"],
+    "Product": ["Laptop", "Mobile", "Headphones", "Tablet", "Monitor"],
+    "Quantity": [1, 2, 3, 1, 2],
+    "Price": [60000, 20000, 2000, 15000, 12000],
+    "Discount": [5000, 2000, 500, 1000, 1500]
+}
 
-print("\n4*3 matrix :")
-print(arr.reshape(4,3))
+df = pd.DataFrame(orders)
+
+df["Final Amount"] = df["Quantity"] * df["Price"] - df["Discount"]
+
+print("All Orders:")
+print(df)
+
+print("\nOrders above Rs. 5000:")
+print(df[df["Final Amount"] > 5000])
+
+highest = df["Final Amount"].max()
+print("\nHighest-value Order:")
+print(df[df["Final Amount"] == highest])
+
+average = df["Final Amount"].mean()
+print("\nAverage Order Value:", average)

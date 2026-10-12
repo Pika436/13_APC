@@ -1,17 +1,37 @@
-# 2.	Create two NumPy arrays of 5 integers each. Perform and display:
-'''•	Addition 
-•	Subtraction 
-•	Multiplication 
-•	Division 
-•	Modulus
-'''
+# 2. 2.	Create a dictionary containing:
+''' 
+Employee ID
+Employee Name
+Department
+Salary
+Experience
+Convert it into a Pandas DataFrame and:
+1.	Display employees with salary greater than ₹50,000. 
+2.	Find the average salary. 
+3.	Find the highest salary. 
+4.	Find the employee with the highest experience.'''
 
-import numpy as np
-arr1=np.array([10,20,30,40,50])
-arr2=np.array([30,40,50,60,70])
+import pandas as pd
+emp={
+    "id":[11,22,33,44,55],
+    "name":["sanju","raju","neha","rupa","priya"],
+    "dept":["it","entc","civil","aiml","cse"],
+    "salary":[40000,50000,98500,87432,90000],
+    "experience":[4,8,2,7,6]
+}
+print("employee data :")
+df=pd.DataFrame(emp)
 
-print("Addition :",arr1+arr2)
-print("substraction :",arr1-arr2)
-print("Multiplication :",arr1*arr2)
-print("division :",arr1/arr2)
-print("Modulus :",arr1%arr2)
+print("salary greater than 50000 :")
+high=df[df["salary"]>50000]
+print(high)
+
+avg=df["salary"].mean()
+print("\naverage salary is :",avg)
+
+highest=df["salary"].max()
+print("\nhighest salary :",highest)
+
+experience=df[df["experience"]==df["experience"].max()]
+print("\nhighest experience :")
+print(experience)
